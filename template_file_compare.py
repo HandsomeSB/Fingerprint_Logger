@@ -30,10 +30,10 @@ import adafruit_fingerprint
 # uart = busio.UART(board.TX, board.RX, baudrate=57600)
 
 # If using with a computer such as Linux/RaspberryPi, Mac, Windows with USB/serial converter:
-uart = serial.Serial("COM6", baudrate=57600, timeout=1)
+# uart = serial.Serial("COM6", baudrate=57600, timeout=1)
 
 # If using with Linux/Raspberry Pi and hardware UART:
-# uart = serial.Serial("/dev/ttyS0", baudrate=57600, timeout=1)
+uart = serial.Serial("/dev/ttyUSB0", baudrate=57600, timeout=1)
 
 # If using with Linux/Raspberry Pi 3 with pi3-disable-bte
 # uart = serial.Serial("/dev/ttyAMA0", baudrate=57600, timeout=1)
@@ -158,10 +158,10 @@ def enroll_save_to_file():
 def set_led_local(color=1, mode=3, speed=0x80, cycles=0):
     """this is to make sure LED doesn't interfer with example
     running on models without LED support - needs testing"""
-    try:
-        finger.set_led(color, mode, speed, cycles)
-    except Exception as exc:
-        print("INFO: Sensor les not support LED. Error:", str(exc))
+    # try:
+    #     finger.set_led(color, mode, speed, cycles)
+    # except Exception as exc:
+    #     print("INFO: Sensor les not support LED. Error:", str(exc))
 
 
 set_led_local(color=3, mode=2, speed=10, cycles=10)

@@ -344,7 +344,11 @@ class Adafruit_Fingerprint:
         Returns just the data payload from the packet"""
         res = self._uart.read(expected)
         self._print_debug("_get_packet received data:", res, data_type="hex")
-        if (not res) or (len(res) != expected):
+        # if (not res) or (len(res) != expected):
+        #     raise RuntimeError("Failed to read data from sensor")
+        if (not res):
+            raise RuntimeError("No response")
+        elif (len(res) != expected):
             raise RuntimeError("Failed to read data from sensor")
 
         # first two bytes are start code
