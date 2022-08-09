@@ -11,6 +11,9 @@ uart = serial.Serial("/dev/ttyUSB0", baudrate=57600, timeout=1)
 # Can also be
 # uart = serial.Serial("/dev/ttyS0", baudrate=57600, timeout=1)
 
+# Windows
+# uart = serial.Serial("COM0", baudrate=57600, timeout=1)
+
 # If using with Linux/Raspberry Pi 3 with pi3-disable-bte
 # uart = serial.Serial("/dev/ttyAMA0", baudrate=57600, timeout=1)
 
